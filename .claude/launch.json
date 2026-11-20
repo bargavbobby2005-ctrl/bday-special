@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bday",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["serve.py", "5173"],
+      "port": 5173,
+      "autoPort": false
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Happy Birthday, SMARTY!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BB%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ===================== Reusable SVG art ===================== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="petalG" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#D98E08"/>
+      <stop offset=".35" stop-color="#F5B814"/>
+      <stop offset=".8" stop-color="#FFD43B"/>
+      <stop offset="1" stop-color="#F9C428"/>
+    </linearGradient>
+    <linearGradient id="petalG2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#B97006"/>
+      <stop offset=".5" stop-color="#E9A20E"/>
+      <stop offset="1" stop-color="#F3B81F"/>
+    </linearGradient>
+    <radialGradient id="seedG">
+      <stop offset="0" stop-color="#3A1F05"/>
+      <stop offset=".55" stop-color="#4E2C09"/>
+      <stop offset=".85" stop-color="#6E4212"/>
+      <stop offset="1" stop-color="#8C5A1C"/>
+    </radialGradient>
+    <pattern id="seeds" width="4.2" height="4.2" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+      <circle cx="2.1" cy="2.1" r=".9" fill="#A87232" opacity=".7"/>
+    </pattern>
+    <linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#A9BE4E"/>
+      <stop offset="1" stop-color="#6F8A27"/>
+    </linearGradient>
+    <path id="petal" d="M0,-12 C6.5,-21 7.5,-35 0,-48 C-7.5,-35 -6.5,-21 0,-12Z"/>
+
+    <!-- realistic sunflower -->
+    <symbol id="sunflower" viewBox="-50 -50 100 100" overflow="visible">
+      <g fill="url(#petalG2)" stroke="#A86A08" stroke-width=".7" transform="rotate(11.25) scale(.94)">
+        <use href="#petal"/><use href="#petal" transform="rotate(22.5)"/><use href="#petal" transform="rotate(45)"/><use href="#petal" transform="rotate(67.5)"/>
+        <use href="#petal" transform="rotate(90)"/><use href="#petal" transform="rotate(112.5)"/><use href="#petal" transform="rotate(135)"/><use href="#petal" transform="rotate(157.5)"/>
+        <use href="#petal" transform="rotate(180)"/><use href="#petal" transform="rotate(202.5)"/><use href="#petal" transform="rotate(225)"/><use href="#petal" transform="rotate(247.5)"/>
+        <use href="#petal" transform="rotate(270)"/><use href="#petal" transform="rotate(292.5)"/><use href="#petal" transform="rotate(315)"/><use href="#petal" transform="rotate(337.5)"/>
+      </g>
+      <g fill="url(#petalG)" stroke="#C17E0A" stroke-width=".7">
+        <use href="#petal"/><use href="#petal" transform="rotate(22.5)"/><use href="#petal" transform="rotate(45)"/><use href="#petal" transform="rotate(67.5)"/>
+        <use href="#petal" transform="rotate(90)"/><use href="#petal" transform="rotate(112.5)"/><use href="#petal" transform="rotate(135)"/><use href="#petal" transform="rotate(157.5)"/>
+        <use href="#petal" transform="rotate(180)"/><use href="#petal" transform="rotate(202.5)"/><use href="#petal" transform="rotate(225)"/><use href="#petal" transform="rotate(247.5)"/>
+        <use href="#petal" transform="rotate(270)"/><use href="#petal" transform="rotate(292.5)"/><use href="#petal" transform="rotate(315)"/><use href="#petal" transform="rotate(337.5)"/>
+      </g>
+      <circle r="17" fill="url(#seedG)" stroke="#5A340B" stroke-width="1"/>
+      <circle r="15" fill="url(#seeds)"/>
+      <circle r="6" fill="#2E1804" opacity=".55"/>
+      <ellipse cx="-5" cy="-6" rx="5" ry="3" fill="#fff" opacity=".08"/>
+    </symbol>
+
+    <!-- sunflower cluster with leaves -->
+    <symbol id="cluster" viewBox="0 0 200 150" overflow="visible">
+      <g stroke="#5E7A1E" stroke-width="1.4">
+        <path d="M70 110 C90 80 130 78 150 92 C130 108 95 118 70 110Z" fill="url(#leafG)"/>
+        <path d="M80 104 C100 96 125 92 146 93" fill="none" stroke="#5E7A1E" stroke-width="1.2"/>
+        <path d="M100 120 C70 140 30 138 14 122 C38 108 78 108 100 120Z" fill="url(#leafG)"/>
+        <path d="M95 120 C70 122 45 122 20 122" fill="none" stroke="#5E7A1E" stroke-width="1.2"/>
+      </g>
+      <use href="#sunflower" x="90" y="10" width="105" height="105"/>
+      <use href="#sunflower" x="10" y="30" width="88" height="88"/>
+      <use href="#sunflower" x="70" y="78" width="64" height="64"/>
+    </symbol>
+
+    <!-- sticker sparkle (thick white cut-out border) -->
+    <path id="sparkPath" d="M0,-46 C6,-12 12,-6 46,0 C12,6 6,12 0,46 C-6,12 -12,6 -46,0 C-12,-6 -6,-12 0,-46Z"/>
+    <symbol id="sparkle" viewBox="-60 -60 120 120" overflow="visible">
+      <use href="#sparkPath" fill="#fff" stroke="#fff" stroke-width="16" stroke-linejoin="round"/>
+      <use href="#sparkPath" fill="#F2C94C" stroke="#A8872D" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M-4,-26 C-2,-14 -6,-8 -14,-4" fill="none" stroke="#FFF1B8" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="sparkle-plain" viewBox="-50 -50 100 100">
+      <use href="#sparkPath" fill="#F2C94C" stroke="#A8872D" stroke-width="3" stroke-linejoin="round"/>
+    </symbol>
+
+    <path id="heartPath" d="M0,32 C-42,6 -46,-24 -23,-32 C-11,-36 0,-27 0,-18 C0,-27 11,-36 23,-32 C46,-24 42,6 0,32Z"/>
+    <symbol id="heart" viewBox="-50 -40 100 80" overflow="visible">
+      <use href="#heartPath" fill="#F2C94C" stroke="#C79A2C" stroke-width="3"/>
+      <ellipse cx="-20" cy="-18" rx="8" ry="5" fill="#FFF1B8" transform="rotate(-30 -20 -18)"/>
+    </symbol>
+    <symbol id="heart-outline" viewBox="-50 -40 100 80" overflow="visible">
+      <use href="#heartPath" fill="none" stroke="#E2B53E" stroke-width="6" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- line bunny & solid yellow bunny silhouette -->
+    <symbol id="bunny-sil" viewBox="0 0 60 80">
+      <g fill="#F2C94C">
+        <ellipse cx="21" cy="21" rx="7" ry="18" transform="rotate(-8 21 21)"/>
+        <ellipse cx="39" cy="21" rx="7" ry="18" transform="rotate(8 39 21)"/>
+        <ellipse cx="30" cy="55" rx="21" ry="18"/>
+      </g>
+      <circle cx="23" cy="53" r="2.4" fill="#8F701E"/><circle cx="37" cy="53" r="2.4" fill="#8F701E"/>
+      <path d="M27 60 Q30 63 33 60" stroke="#8F701E" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- hand-drawn pointer cursor (white with dark outline) -->
+    <symbol id="cursor-hand" viewBox="0 0 44 52" overflow="visible">
+      <path d="M15 5 a4.5 4.5 0 0 1 9 0 V21 a4.2 4.2 0 0 1 8 1.5 a4.2 4.2 0 0 1 8 2.5 V36 c0 8 -5.5 13 -13 13 h-5 c-5.5 0 -8.5 -2.5 -11 -7 L3.5 30 a4.5 4.5 0 0 1 7 -5 L15 30 Z"
+            fill="#fff" stroke="#3E2C0A" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M24 21 V31 M32 23 V32" stroke="#3E2C0A" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- line-art retro camera -->
+    <symbol id="camera" viewBox="0 0 120 86" overflow="visible">
+      <rect x="20" y="5" width="28" height="13" rx="4" fill="#FFF6DA" stroke="#8F701E" stroke-width="3.5"/>
+      <rect x="4" y="14" width="112" height="66" rx="14" fill="#FFF6DA" stroke="#8F701E" stroke-width="3.5"/>
+      <path d="M4 34 H116" stroke="#8F701E" stroke-width="3"/>
+      <circle cx="60" cy="49" r="23" fill="#F6E3A0" stroke="#8F701E" stroke-width="3.5"/>
+      <circle cx="60" cy="49" r="13" fill="#FFFDF5" stroke="#8F701E" stroke-width="3"/>
+      <circle cx="55" cy="44" r="3.5" fill="#8F701E"/>
+      <rect x="90" y="20" width="17" height="9" rx="3" fill="#F2C94C" stroke="#8F701E" stroke-width="2.5"/>
+      <circle cx="16" cy="24" r="3.2" fill="#8F701E"/>
+      <path d="M32 74 H88" stroke="#8F701E" stroke-width="4.5" stroke-linecap="round"/>
+    </symbol>
+    <!-- falling leaf (page 3) -->
+    <symbol id="leaf" viewBox="0 0 40 60" overflow="visible">
+      <path d="M20 2 C34 14 38 34 22 56 C20 58 18 58 17 56 C2 36 6 14 20 2Z" fill="currentColor"/>
+      <path d="M20 6 C21 22 20 40 19 56" stroke="rgba(110,70,10,.45)" stroke-width="1.6" fill="none"/>
+      <path d="M20 22 L29 16 M20 32 L30 27 M20 42 L28 38 M20 27 L11 21 M20 37 L10 32" stroke="rgba(110,70,10,.3)" stroke-width="1.1"/>
+    </symbol>
+  </defs>
+</svg>
+
+
+<div class="viewport" id="viewport">
+  <div class="stage" id="stage">
+
+    <!-- ==================== PAGE 1 : INTRO ==================== -->
+    <section class="page page-intro" data-title="Message" aria-label="You've got a message">
+      <div class="card card-intro">
+        <div class="arch arch-l" aria-hidden="true"></div>
+        <div class="arch arch-r" aria-hidden="true"></div>
+        <div class="band band-top"></div>
+
+        <div class="card-main intro-grid">
+          <div class="bang-wrap reveal" style="--d:.05s" aria-hidden="true">
+            <svg class="bang" viewBox="-14 -14 128 300" overflow="visible">
+              <g fill="#fff" stroke="#fff" stroke-width="20" stroke-linejoin="round">
+                <path d="M16 10 L86 10 L68 190 L36 190 Z"/><circle cx="52" cy="238" r="25"/>
+              </g>
+              <g fill="#F2C94C" stroke="#8F701E" stroke-width="5" stroke-linejoin="round">
+                <path d="M16 10 L86 10 L68 190 L36 190 Z"/><circle cx="52" cy="238" r="25"/>
+              </g>
+              <path d="M30 22 L46 22 L41 120" stroke="#FFF1B8" stroke-width="7" fill="none" stroke-linecap="round"/>
+              <circle cx="44" cy="230" r="6" fill="#FFF1B8"/>
+            </svg>
+            <svg class="bang-flower"><use href="#sunflower"/></svg>
+          </div>
+
+          <div class="intro-center">
+            <h1 class="title reveal" style="--d:.15s">HEY YOU'VE GOT<br>A MESSAGE!</h1>
+            <p class="passage reveal" style="--d:.3s">my mom's only son thinks you're pretty amazing and he left a little something here just for you. Take your time and please try to watch it on laptop, because today is all about you.</p>
+            <div class="reveal" style="--d:.45s">
+              <button class="pill pill-dark click-here" data-go="1">
+                CLICK HERE
+                <svg class="cursor-icon" aria-hidden="true"><use href="#cursor-hand"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="sparkle-col" aria-hidden="true">
+            <svg class="sticker sparkle s-big twinkle"><use href="#sparkle"/></svg>
+            <svg class="sticker sparkle s-mid twinkle" style="--t:.7s"><use href="#sparkle"/></svg>
+          </div>
+        </div>
+
+        <div class="band band-bottom">
+          <svg class="deco flower f-intro-bl" style="--z:6px"><use href="#sunflower"/></svg>
+          <svg class="deco flower f-intro-br" style="--z:8px"><use href="#sunflower"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 2 : PRESENT GATE (locked) ==================== -->
+    <section class="page page-gate" data-title="Present?" aria-label="Are you ready for a birthday present?">
+      <div class="card card-gate" id="gateCard">
+        <div class="band band-top">
+          <svg class="deco cluster c-tl" style="--z:8px"><use href="#cluster"/></svg>
+          <svg class="deco sparkle-p s-gate twinkle" style="--z:14px"><use href="#sparkle-plain"/></svg>
+          <svg class="deco heart-o h-gate2 floaty" style="--t:.8s;--z:16px"><use href="#heart-outline"/></svg>
+        </div>
+
+        <div class="card-main gate-center">
+          <h2 class="title reveal" style="--d:.1s">ARE YOU READY FOR A<br>BDAY PRESENT?</h2>
+          <p class="passage reveal" style="--d:.25s">Heyy, I've tried something to cheer you up on your day. Hope you like it, there are few things you can get mad of, but its fine and I dare you to press the NO button.&hellip;</p>
+          <div class="gate-buttons reveal" style="--d:.4s">
+            <button class="pill pill-gold" id="yesBtn" data-go="2" data-confetti>YES</button>
+            <button class="pill pill-gold pill-no" id="noBtn" type="button" aria-label="No (good luck catching it)">NO</button>
+          </div>
+          <p class="gate-hint" id="gateHint" role="status" aria-live="polite">psst&hellip; say YES to unwrap your present ☀</p>
+        </div>
+
+        <div class="band band-bottom band-torn">
+          <svg class="deco cluster c-bl" style="--z:5px"><use href="#cluster"/></svg>
+          <svg class="deco cluster c-br" style="--z:5px"><use href="#cluster"/></svg>
+          <div class="torn-corner tc-bl" data-torn-corner="bl"></div>
+          <div class="torn-corner tc-br" data-torn-corner="br"></div>
+          <svg class="deco heart h-gate floaty" style="--z:10px"><use href="#heart"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 3 : 3 EQUAL PHOTO FRAMES (photo1-3) + falling leaves ==================== -->
+    <section class="page page-p3 media-page" data-title="Bestie" aria-label="Happy birthday greeting">
+      <div class="card card-media">
+        <div class="leaves" aria-hidden="true"></div>
+        <div class="band band-top">
+          <svg class="deco flower f-tl" style="--z:10px"><use href="#sunflower"/></svg>
+          <svg class="deco heart h-top1 floaty" style="--z:16px"><use href="#heart"/></svg>
+          <svg class="deco heart-o h-top2 floaty" style="--t:.6s;--z:20px"><use href="#heart-outline"/></svg>
+          <svg class="deco flower f-tr" style="--z:12px"><use href="#sunflower"/></svg>
+        </div>
+
+        <div class="card-main media-grid">
+          <div class="duo"><div class="trio">
+            <figure class="frame reveal reveal-flip" style="--d:.1s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph"><img data-photo="1" alt="Photo 1"></div>
+            </figure>
+            <figure class="frame reveal reveal-flip" style="--d:.2s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph"><img data-photo="2" alt="Photo 2"></div>
+            </figure>
+            <figure class="frame reveal reveal-flip" style="--d:.3s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph"><img data-photo="3" alt="Photo 3"></div>
+            </figure>
+          </div></div>
+          <div class="media-text">
+            <h2 class="title reveal" style="--d:.36s">HAPPY BIRTHDAY, <br>THAPASYA GUMMANAVENKATA RAO!</h2>
+            <p class="passage reveal" style="--d:.5s">Heyy,<br>so today is the day of smartest person I’ve ever met.<br>Happiest birthday thapasya ✨<br>As you already told me that 2026 was bad, I hope the coming days will be really great for you, be happy and have fun minuu!!</p>
+          </div>
+        </div>
+
+        <div class="band band-bottom band-torn">
+          <div class="torn" data-torn="top"></div>
+          <svg class="deco cluster c-bl" style="--z:6px"><use href="#cluster"/></svg>
+          <svg class="deco cluster c-br" style="--z:6px"><use href="#cluster"/></svg>
+          <button class="pill pill-gold next-tab" data-go="3">NEXT</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 4 : 3 EQUAL PHOTO FRAMES (photo4-6) + LETTER ==================== -->
+    <section class="page page-p4 media-page" data-title="Wishes" aria-label="Birthday wishes">
+      <div class="card card-media">
+        <div class="leaves" aria-hidden="true"></div>
+        <div class="band band-top">
+          <svg class="deco flower f-tl" style="--z:10px"><use href="#sunflower"/></svg>
+          <svg class="deco sparkle-p s-tr twinkle" style="--z:18px"><use href="#sparkle-plain"/></svg>
+        </div>
+
+        <div class="card-main media-grid">
+          <div class="duo"><div class="trio">
+            <figure class="frame reveal reveal-flip" style="--d:.1s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph"><img data-photo="4" alt="Photo 4"></div>
+            </figure>
+            <figure class="frame reveal reveal-flip" style="--d:.2s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph"><img data-photo="5" alt="Photo 5"></div>
+            </figure>
+            <figure class="frame reveal reveal-flip" style="--d:.3s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph"><img data-photo="6" alt="Photo 6"></div>
+            </figure>
+          </div></div>
+          <div class="media-text">
+            <h2 class="title reveal" style="--d:.38s">TO THE SUNSET!</h2>
+            <p class="passage reveal" style="--d:.52s">Okay, I know it’s been only three months since we met and I just wanted to tell you one thing. Don't think too much about anything Smartyy!! One day everything will eventually be fine. Maybe one day you will get out of vellore and have that apartment of yours in the way you wanted it to be. Reminder: Look at those funny photos of yours. And nowadays you’re hiding things from me, it’s not good. But rest everything is fine, Be happiest you can be, Minuu.</p>
+          </div>
+        </div>
+
+        <div class="band band-bottom">
+          <svg class="deco flower f-bl" style="--z:8px"><use href="#sunflower"/></svg>
+          <svg class="deco cluster c-br" style="--z:8px"><use href="#cluster"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 5 : 3 EQUAL VIDEO FRAMES (video1-3) ==================== -->
+    <section class="page page-p5 media-page" data-title="Friendship" aria-label="Friendship tribute">
+      <div class="card card-media">
+        <div class="leaves" aria-hidden="true"></div>
+        <div class="band band-top">
+          <svg class="deco cluster c-tl" style="--z:10px"><use href="#cluster"/></svg>
+          <svg class="deco heart h-top1 floaty" style="--z:16px"><use href="#heart"/></svg>
+          <svg class="deco flower f-tr" style="--z:12px"><use href="#sunflower"/></svg>
+        </div>
+
+        <div class="card-main media-grid">
+          <div class="duo"><div class="trio">
+            <figure class="frame reveal reveal-flip" style="--d:.1s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph ph-video"><video data-video="1" muted autoplay loop playsinline controls preload="metadata" aria-label="Video 1"></video></div>
+            </figure>
+            <figure class="frame reveal reveal-flip" style="--d:.2s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph ph-video"><video data-video="2" muted autoplay loop playsinline controls preload="metadata" aria-label="Video 2"></video></div>
+            </figure>
+            <figure class="frame reveal reveal-flip" style="--d:.3s">
+              <span class="tape" aria-hidden="true"></span>
+              <div class="ph ph-video"><video data-video="3" muted autoplay loop playsinline controls preload="metadata" aria-label="Video 3"></video></div>
+            </figure>
+          </div></div>
+          <div class="media-text">
+            <p class="passage reveal" style="--d:.4s">Anyway, I hope you liked this little surprise! I know it’s not perfect, but I tried something that might make you happy, so appreciate it rude person. And sorry about the funny photos because I had only, if anything is missing or not up to your expectations, I’ll do it better next time. Happy Birthday once again, Sunset!!</p>
+            <div class="tribute-foot reveal" style="--d:.62s">
+              <div class="bunnies" aria-hidden="true">
+                <svg class="bunny hop"><use href="#bunny-sil"/></svg>
+                <svg class="bunny bunny-sm hop" style="--t:.3s"><use href="#bunny-sil"/></svg>
+                <svg class="bunny hop" style="--t:.6s"><use href="#bunny-sil"/></svg>
+              </div>
+              <span class="tag">HAPPIEST BIRTHDAY MINUU!</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="band band-bottom">
+          <svg class="deco flower f-bl" style="--z:8px"><use href="#sunflower"/></svg>
+          <button class="replay" data-go="0">↺ play again</button>
+          <svg class="deco cluster c-br" style="--z:8px"><use href="#cluster"/></svg>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ===== Navigation (gutter column on desktop, bottom row on phones) ===== -->
+<nav class="nav" aria-label="Pages">
+  <button class="arrow" id="prevBtn" aria-label="Previous page">↑</button>
+  <div class="dots-nav" id="dotsNav"></div>
+  <button class="arrow" id="nextBtn" aria-label="Next page">↓</button>
+</nav>
+<div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+
+<script src="photo-manifest.js" onerror="window.PHOTO_MANIFEST={}"></script>
+<script src="script.js"></script>
+</body>
+</html>
